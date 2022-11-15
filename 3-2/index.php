@@ -20,7 +20,7 @@ function calc($price, $number) {
 
 $index = 0;
 foreach ($fruits as $key => $value) {
-		echo $key . "は" . calc($value, $count[$index]) . "です。";
+		echo $key . "は" . calc($value, $count[$index]) . "円です。";
     echo "<br>";
     $index++;
   }

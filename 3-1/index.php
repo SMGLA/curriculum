@@ -2,7 +2,7 @@
 
 $num = 1;
 
-for($i=1;$i<100;$i++) { 
+for($i=1;$i<=100;$i++) { 
   if ($num % 3 == 0 && $num % 5 == 0) {
     echo 'FizzBuzz!';
     echo "<br>";

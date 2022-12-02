@@ -18,15 +18,11 @@ $input_port = $_POST['port'];
 $input_language = $_POST['language'];
 $input_mysql = $_POST['mysql'];
 
-$answer_port = $_POST[$option_port_answer];
-$answer_language = $_POST[$option_language_answer];
-$answer_mysql = $_POST[$option_mysql_answer];
 
 //選択した回答と正解が一致していれば「正解！」、一致していなければ「残念・・・」と出力される処理を組んだ関数を作成する
 
 
 function check_answer($input, $answer) {
-
     if ($input == $answer){
       print '正解！';
     } else {

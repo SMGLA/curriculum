@@ -1,18 +1,12 @@
-<?php 
-session_start();
+<?php
 
 //[question.php]から送られてきた名前の変数、選択した回答、問題の答えの変数を作成
 
-$input_name = $_SESSION['input_name_session'];
+$input_name = $_POST['input_name'];
 
-$option_port_answer = $_SESSION['option_port_answer'];
-$option_language_answer = $_SESSION['option_language_answer'];
-$option_mysql_answer = $_SESSION['option_mysql_answer'];
-
-// セッション変数をすべて削除
-session_unset();
-// セッションIDおよびデータを破棄
-session_destroy();
+$option_port_answer = $_POST['option_port_answer'];
+$option_language_answer = $_POST['option_language_answer'];
+$option_mysql_answer = $_POST['option_mysql_answer'];
 
 $input_port = $_POST['port'];
 $input_language = $_POST['language'];

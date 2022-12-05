@@ -1,11 +1,7 @@
 <?php
-session_start();
 
 //POST送信で送られてきた名前を受け取って変数を作成
 $input_name = $_POST['input_name'];
-
-//次ページでも使用する値をSESSION変数に格納しておく
-$_SESSION['input_name_session'] = $input_name;
 
 //①画像を参考に問題文の選択肢の配列を作成してください。
 $option_port = ['80', '22', '20', '21'];
@@ -13,14 +9,9 @@ $option_language = ['PHP', 'Python', 'Java', 'HTML'];
 $option_mysql = ['join', 'select', 'insert', 'update'];
 
 //② ①で作成した、配列から正解の選択肢の変数を作成してください
-// $option_port_answer = 80;
-// $option_language_answer = 'HTML';
-// $option_mysql_answer = 'select';
-
-//次ページでも使用する変数をSESSION変数に格納しておく
-$_SESSION['option_port_answer'] = 80;
-$_SESSION['option_language_answer'] = 'HTML';
-$_SESSION['option_mysql_answer'] = 'select';
+$option_port_answer = 80;
+$option_language_answer = 'HTML';
+$option_mysql_answer = 'select';
 
 ?>
 
@@ -39,6 +30,12 @@ $_SESSION['option_mysql_answer'] = 'select';
 
 <!--フォームの作成 通信はPOST通信で-->
 <form action="answer.php" method="post">
+
+<?php echo "<input type=\"hidden\" name=\"input_name\" value=\"{$input_name}\" />"; ?>
+<?php echo "<input type=\"hidden\" name=\"option_port_answer\" value=\"{$option_port_answer}\" />"; ?>
+<?php echo "<input type=\"hidden\" name=\"option_language_answer\" value=\"{$option_language_answer}\" />"; ?>
+<?php echo "<input type=\"hidden\" name=\"option_mysql_answer\" value=\"{$option_mysql_answer}\" />"; ?>
+
 
 <h2>①ネットワークのポート番号は何番？</h2>
 <!--③ 問題のradioボタンを「foreach」を使って作成する-->
